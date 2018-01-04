@@ -8,8 +8,8 @@
     <!-- 要用到bootstrap.css,less.js,jQuery ,bootstrap.js,template.js-->
     <!-- 引入bootstrap.css -->
     <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.css">
-    <!-- 引入自己写的*.less文件 -->
-
+    <!-- 引入自己写的*.less文件 注意rel-->
+    <link rel="stylesheet/less" href="./css/index.less">
     <!-- 引入less.js,注意要在自己写的.less文件之后引入 -->
     <script type="text/javascript" src="./libs/less/less.js"></script>
     <title>慢慢买</title>
@@ -17,7 +17,13 @@
 <body>
     <!-- 头部 -->
     <header id="header">
-
+        <a href="#" class="logo">
+            <img src="./images/header_logo.png" alt="慢慢买">
+        </a>
+        <a href="#" class="app">
+            <img src="./images/header_app.png" alt="点击下载">
+        </a>
+        
     </header>
     <!-- 搜索框 -->
     <section id="search">
@@ -33,7 +39,7 @@
     </section>  
     <!-- 底部 -->
     <footer id="footer">
-        
+
     </footer>
 </body>
     <!-- bootstrap.css   jQuery.js    bootstrap.js    这三个的顺序是不能改变的 -->
