@@ -1,7 +1,7 @@
 @import url(color.less);
 #header{
     height: 50px;
-    background-color:@titele-bgc;
+    background-color:@title-bgc;
     position: relative;
     >.logo{
         position: absolute;
@@ -23,6 +23,127 @@
         >img{
             width: 34px;
             height: 34px;
+        }
+    }
+}
+#search{
+    >form{
+        display: flex;
+        padding: 10px;
+        border-bottom: 1px solid @border-c;
+
+        input[type=search]{
+            flex: 1;
+            margin-right: 10px;
+            border-radius:15px;
+            background-color: @search-bgc;
+            border: 0px;
+            outline: none;
+            padding-left: 15px;
+            position: relative;
+            
+        }
+        input[type=search]::-webkit-search-cancel-button{
+            -webkit-appearance: none;
+            width: 15px;
+            height: 15px;
+            background-image: url("../images/cancel.png");
+            background-size: 10px;
+            background-repeat: no-repeat;
+            position: absolute;
+            transform: translateY(50%);
+            right: 5px;
+        }
+
+        input[type=submit]{
+            width: 63px;
+            height: 30px;
+            float: right;
+            background-color: @title-bgc;
+            color: #fff;
+            border-radius: 15px;
+            border: 0px;
+        }
+    }
+}
+#menu{
+    >.container{
+        padding: 0px;
+        border-bottom: 2px solid @border-c;
+        >.row{
+            margin: 0px;
+            >div{
+                padding: 15px 20px;
+                text-align: center;
+                >a{ 
+                    display: block;
+                    >img{
+                        width: 50px;
+                        height: 50px;
+                        margin-bottom: 5px;
+                    }
+    
+                    >p{
+                        color: #5a5a5a;
+                        text-align: center;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+}
+#content{
+    >.recommend{
+        >.title{     
+            >a{
+                display: block;
+                height: 35px;
+                background-color: @title-bgc;
+                font-size: 20px;
+                color: #fff;
+                font-weight: 300;
+                line-height: 35px;
+                padding-left: 5px;
+                >span{
+                    
+                    font-weight: 100;
+                    line-height: 35px;
+                    float: right;
+                    padding-right: 5px;
+                }
+            }
+        }
+        >.list{
+            .media-left{
+
+            }
+            .media-body{
+                >.top{
+                    font-size:20px;
+                    margin-top: 15px;
+                    .trade-name{
+                        font-weight: 500;
+
+                    }
+                    .trade-price{
+                        color: @title-bgc;
+                    }
+                }
+                >.down{
+                    margin-top: 50px;
+                    color: #666;
+                    .down-time{
+
+                    }
+                    .glyphicon{
+                        position: relative;
+                        left: 20px;
+                        color: red;
+                    }
+                    
+                }
+            }
         }
     }
 }
