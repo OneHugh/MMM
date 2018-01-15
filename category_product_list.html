@@ -11,7 +11,7 @@
 		引入自己写的less文件，rel的值
 	-->
     <link rel="stylesheet/less" href="css/common_section.less">
-    <link rel="stylesheet/less" href="css/index.less">
+    <link rel="stylesheet/less" href="css/category_product_list.less">
     <!-- 引入less.js 这个文件会帮我们进行*.less文件的编译，生成css内容
 			less.js这个文件的引入，一定要在我们自己写的less文件之后
 
@@ -25,45 +25,29 @@
     <script type="text/javascript" src="libs/less/less.js"></script>
 
 	<!-- 配置的模板需要注意:1、type必须是text/html  2、需要配置一个id -->
-    <script type="text/html" id="menu-template">
-    	<div class="row">
-	    	{{each result as value i}}
-	    		<div class="col-xs-3">
-	                <a href="{{value.titlehref}}">
-						{{#value.img}}
-						<p>{{value.name}}</p>
-					</a>
-	            </div>
-	    	{{/each}}
-    	 </div>
-    </script>
-
     <script type="text/html" id="product-list-template">
-   
-    	{{each result as value i}}
-    		<div class="media">
+        {{each result as value i}}
+             <div class="media">
                 <div class="media-left">
-                    <a href="#">
-      					{{#value.productImg2}}
-    				</a>
+                    <a href="category_product_detail.html?myid={{value.productId}}">
+                       {{#value.productImg}}
+                    </a>
                 </div>
                 <div class="media-body">
                     <div class="normal-info">
-                    	<span class="product-name">{{value.productName}}</span>
-                    	<span class="product-price">{{value.productPinkage}}</span>
+                        <span class="product-name">{{value.productName}}</span>
+                        <div class="product-price">{{value.productPrice}}</div>
                     </div>
                     <div class="other-info">
-                    	<span class="from-time">{{value.productFrom}} | {{value.productTime}}</span>
-                    	<span class="comment">{{value.productComCount}}</span>
+                        <span class="from-time">{{value.productQuote}}</span>
+                        <span class="comment">{{value.productCom}}</span>
                     </div>
                 </div>
             </div>
-    	{{/each}}
-    	
+        {{/each}}
     </script>
 
-
-    <title>慢慢买首页</title>
+    <title>慢慢买分类商品列表</title>
 </head>
 
 <body>
@@ -71,7 +55,8 @@
 		语义化标签的使用
 		语义化标签存在兼容性问题：引入html5shiv.js库
 	-->
-    <header id="header"></header>
+    <header id="header">
+    </header>
     <!-- 搜索 -->
     <section id="search">
         <!-- 加上form标签的原因
@@ -79,28 +64,24 @@
 		2、它帮我们实现了一些默认的效果
 		3、更方便布局，不影响其他元素
 	 -->
-       
     </section>
-    <!-- 菜单 -->
-    <section id="menu">
-    </section>
-    <!-- 推荐 -->
-    <section id="recommend">
-        <div class="recommend-title">
-            <a href="#">超值折扣推荐</a>
+    <!-- 商品列表 -->
+    <section id="product">
+        <div class="product-list">
+        
         </div>
-
-        <div class="recommend-list">
-        </div> 
-        <div class="recommend-more">
-        	<a href="#">更多优惠信息 >></a>
-        </div>
-        <div class="recommend-title">
-            <a href="#">品牌排行</a>
+        <div class="product-page">
+            <a class="prev-page" href="#">上一页</a>
+            <div class="ui-select">
+                <select></select>
+            </div>
+            <a class="next-page" href="#">下一页</a>
         </div>
     </section>
+    
     <!-- 底部 -->
     <footer id="footer">
+    	
 
     </footer>
 </body>
@@ -114,6 +95,6 @@
 <script type="text/javascript" src="libs/template/template.js"></script>
 <!-- 这里写的就是这个界面.js文件 -->
 <script type="text/javascript" src="js/common_section.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/category_product_list.js"></script>
 
 </html>
